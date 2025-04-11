@@ -15,7 +15,7 @@ function visibleButton () {
     if (window.scrollY > welcomeSection.clientHeight) {
         buttonTop.classList.add('active-button-top')
 
-        if ( footerHeight > (footerBottom - window.outerHeight) ) {
+        if ( footerHeight > (footerBottom - window.outerHeight + 100) ) {
             buttonTop.classList.remove('active-button-top')
             footerButtonTop.classList.add('active-footer-button-top')
         } else {
