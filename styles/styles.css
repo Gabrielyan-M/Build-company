@@ -1,6 +1,6 @@
 @charset "UTF-8";
 footer .documents a, footer .about-us-text p, .contacts-block__container .contact-block__container p, .question-answer-block .text-block p, .services__container > p, .services__container li p, .search-service__container input, .pricing-plan-block__container .plan-card li, .about-us-section_container .text-block p, .about-us-section_container .text-block li, .form .close-form, .form .submit-call-button, .form .order-call-button, .form .input-checkbox-block p a, .form .input-checkbox-block p, .form input[type=text],
-.form input[type=number], .header__container a, .more-information-text, .form .close-form {
+.form input[type=number], .header__container a, .notification-block__container p, .more-information-text, .form .close-form {
   font-family: "Montserrat";
   font-weight: normal;
   color: rgb(255, 255, 255);
@@ -79,8 +79,8 @@ footer .documents a:hover::after, .services__container > p:hover::after, .more-i
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   z-index: 100000;
-  -webkit-transition: border 0.15s;
-  transition: border 0.15s;
+  -webkit-transition: border 0.2s;
+  transition: border 0.2s;
 }
 
 #cursor-point {
@@ -88,17 +88,53 @@ footer .documents a:hover::after, .services__container > p:hover::after, .more-i
   height: 6px;
   background-color: rgb(255, 255, 255);
   border-radius: 50px;
-  -webkit-transition: width 0.15s, height 0.15s;
-  transition: width 0.15s, height 0.15s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
-.cursorEnter:hover #corsor {
-  border: 2px black;
+#button-top {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  bottom: 30px;
+  left: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 900;
 }
-.cursorEnter:hover #cursor-point {
+#button-top:hover {
+  opacity: 1;
+  -webkit-box-shadow: 0px 0px 9px 10px rgba(129, 96, 52, 0.2);
+          box-shadow: 0px 0px 9px 10px rgba(129, 96, 52, 0.2);
+}
+#button-top.active-button-top {
+  visibility: visible;
+  opacity: 0.8;
+}
+
+.notification-block {
+  visibility: hidden;
+  position: fixed;
+  top: -60px;
+  right: 30px;
   background-color: rgb(129, 96, 52);
-  width: 8px;
-  height: 8px;
+  border-radius: 100px;
+  z-index: 9000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.notification-block.active-notification {
+  visibility: visible;
+  top: 20px;
+}
+.notification-block__container {
+  padding: 10px 40px;
+}
+.notification-block__container p {
+  font-size: 1.5rem;
 }
 
 #welcome-section {
@@ -1025,28 +1061,28 @@ header {
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 .img-block:nth-child(1) {
-  background: url(/media/images/preload-gallery/image1.png) center center/cover no-repeat;
+  background: url(../media/images/preload-gallery/image1.png) center center/cover no-repeat;
 }
 .img-block:nth-child(2) {
-  background: url(/media/images/preload-gallery/image2.png) center center/cover no-repeat;
+  background: url(../media/images/preload-gallery/image2.png) center center/cover no-repeat;
 }
 .img-block:nth-child(3) {
-  background: url(/media/images/preload-gallery/image3.png) center center/cover no-repeat;
+  background: url(../media/images/preload-gallery/image3.png) center center/cover no-repeat;
 }
 .img-block:nth-child(4) {
-  background: url(/media/images/preload-gallery/image4.png) center center/cover no-repeat;
+  background: url(../media/images/preload-gallery/image4.png) center center/cover no-repeat;
 }
 .img-block:nth-child(5) {
-  background: url(/media/images/preload-gallery/image5.png) center center/cover no-repeat;
+  background: url(../media/images/preload-gallery/image5.png) center center/cover no-repeat;
 }
 .img-block:nth-child(6) {
-  background: url(/media/images/preload-gallery/image6.png) center center/cover no-repeat;
+  background: url(../media/images/preload-gallery/image6.png) center center/cover no-repeat;
 }
 .img-block:nth-child(7) {
-  background: url(/media/images/preload-gallery/image7.png) center center/cover no-repeat;
+  background: url(../media/images/preload-gallery/image7.png) center center/cover no-repeat;
 }
 .img-block:nth-child(8) {
-  background: url(/media/images/preload-gallery/image8.png) center center/cover no-repeat;
+  background: url(../media/images/preload-gallery/image8.png) center center/cover no-repeat;
 }
 .img-block:hover {
   -webkit-box-shadow: inset 0px 0px 16px 7px rgba(0, 0, 0, 0.75);
@@ -1236,6 +1272,7 @@ header {
 }
 
 .map {
+  border-radius: 50px 0px 0px 50px;
   width: 55vw;
   height: 100%;
 }
@@ -1298,6 +1335,7 @@ header {
 }
 
 footer {
+  position: relative;
   margin-top: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1310,6 +1348,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 50px 50px 0px 0px;
   padding: 30px 0px;
+  z-index: 1000;
 }
 footer .logo-block {
   display: -webkit-box;
@@ -1428,4 +1467,20 @@ footer .contacts {
       -ms-flex-pack: end;
           justify-content: flex-end;
   gap: 30px;
+}
+footer > button {
+  visibility: hidden;
+  position: absolute;
+  top: 42px;
+  left: 35px;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+footer > button:hover {
+  opacity: 0.5;
+}
+footer > button.active-footer-button-top {
+  visibility: visible;
+  opacity: 0.3;
 }
