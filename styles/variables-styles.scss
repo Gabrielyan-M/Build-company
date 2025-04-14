@@ -1,0 +1,94 @@
+
+$light-gold-color:  rgb(170, 124, 62);
+$dark-gold-color: rgb(129, 96, 52);
+
+$dark-gold-color_20: rgba(129, 96, 52, 0.2);
+
+$light-green-color: rgb(29, 145, 29);
+$dark-green-color: rgb(40, 102, 36);
+
+$background-color: rgb(32, 32, 32);
+
+$text-color: rgb(255, 255, 255);
+$text-white-and-gold-color: rgb(187, 150, 101);
+
+$light-gold-box-shadow: 0px 0px 9px 10px $dark-gold-color_20;
+
+
+// plan cards
+$bg-standart-card: rgb(57, 102, 46);
+$bg-comfort-card:  rgb(46, 52, 102);
+$bg-business-card:  $dark-gold-color;
+
+
+%Montserrat-Regular{
+    font-family: 'Montserrat';
+    font-weight: normal;
+    color: $text-color;
+}
+%Montserrat-Medium{
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: $text-color;
+}
+%Montserrat-SemiBold{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: $text-color;
+}
+
+
+
+%border-radius-media {
+    border-radius: 50px;
+
+}
+
+// .order-call-button
+
+%order-call-button {
+    width: 100%;
+    height: 100%;
+
+    background-color: $dark-green-color;/* Rectangle 4 */
+    border: none;
+    @extend %border-radius-media;
+    
+    &:hover {
+        background-color: $light-green-color;/* Rectangle 4 */
+   
+    }
+}
+
+%text-button {
+    opacity: 0.6;
+    @extend %Montserrat-Regular;
+    color: $text-color;
+
+
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 25%;
+        height: 1px;
+        background-color: $text-color;
+        bottom: 0px;
+        right: 0px;
+        transition: 0.15s;
+    }
+
+    &:hover {
+        &::after {
+            width: 90%;
+
+        }
+    }
+}
+
+%gold-backgroud {
+    background-color: $background-color;
+    border: 2px solid $light-gold-color;
+    box-shadow: $light-gold-box-shadow;
+}
+
