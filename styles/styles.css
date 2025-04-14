@@ -1,5 +1,5 @@
 @charset "UTF-8";
-footer .documents a, footer .about-us-text p, .contacts-block__container .contact-block__container p, .question-answer-block .text-block p, .services__container > p, .services__container li p, .search-service__container input, .pricing-plan-block__container .plan-card li, .about-us-section_container .text-block p, .about-us-section_container .text-block li, .form .close-form, .form .submit-call-button, .form .order-call-button, .form .input-checkbox-block p a, .form .input-checkbox-block p, .form input[type=text],
+footer .documents a, footer .about-us-text p, .contacts-block__container .contact-block__container p, .question-answer-block .text-block p, .services__container > p, .services__container li p, .search-service__container input, .pricing-plan-block__container .plan-card li, .about-us-section_container .text-block p, .about-us-section_container .text-block li, .form .close-form, .form .submit-call-button, .form .order-call-button, .form label a, .form label, .form input[type=text],
 .form input[type=number], .header__container a, .notification-block__container p, .more-information-text, .form .close-form {
   font-family: "Montserrat";
   font-weight: normal;
@@ -588,6 +588,10 @@ header.visible-element {
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
 }
+.form label {
+  font-size: 0.9rem;
+  color: rgb(255, 255, 255);
+}
 .form .input-checkbox-block {
   opacity: 0;
   display: -webkit-box;
@@ -610,9 +614,6 @@ header.visible-element {
   opacity: 1;
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
-}
-.form .input-checkbox-block p {
-  font-size: 0.9rem;
 }
 .form input[type=checkbox] {
   margin: 0px;
