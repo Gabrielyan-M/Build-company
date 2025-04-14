@@ -8,8 +8,8 @@ const sections = document.querySelectorAll('[data-js-section]')
 
 
 window.addEventListener('load', () => {
-    // document.querySelector('body').classList.remove('scroll-off')
-    // preloaderBlock.classList.add('preloader-off')
+    document.querySelector('body').classList.remove('scroll-off')
+    preloaderBlock.classList.add('preloader-off')
 
     sections.forEach(section => {
         section.classList.add('dom-load')
