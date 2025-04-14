@@ -59,6 +59,8 @@ footer .documents a:hover::after, .services__container > p:hover::after, .more-i
 }
 
 .scroll-off {
+  width: 100vw;
+  height: 100vh;
   overflow-y: hidden;
 }
 
