@@ -537,7 +537,15 @@ header {
     }
     
         
+    label {
+        @extend %Montserrat-Regular;
+        font-size: 0.9rem;
+        color: $text-color;
 
+        a {
+            @extend %Montserrat-Regular;
+        }
+    }
 
     .input-checkbox-block {
         opacity: 0;
@@ -549,16 +557,6 @@ header {
         &.active-form {
             opacity: 1;
             transform: translateY(0px);
-        }
-
-
-        p {
-            @extend %Montserrat-Regular;
-            font-size: 0.9rem;
-
-            a {
-                @extend %Montserrat-Regular;
-            }
         }
 
         transform: translateY(-20px);
