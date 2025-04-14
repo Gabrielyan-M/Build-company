@@ -96,23 +96,15 @@
                             <div class="form" data-id-form="header">
                                 <div class="form__container">
     
-                                    <form 
-                                        action="https://formspree.io/f/mpwpnakb"
-                                        method="POST"
-                                        id="headForm"
-                                        data-id-form="header">
-                                        
-                                        <input  class="" type="text" placeholder="Ваше имя..."
-                                        data-id-form="header">
-                                        <input class="" type="number" placeholder="Ваш номер телефона..."
-                                        data-id-form="header">
-                                        
-                                        <label class="input-checkbox-block "
-                                        data-id-form="header">
-                                            <input id="headCheckbox" type="checkbox">
-                                            <p for="headCheckbox">Разрешение на <a href="#" ><u>обработку данных</u></a></p>
-                                        </label> 
-                                   </form>
+
+                                    <form action="https://formspree.io/f/mpwpnakb" method="POST" id="headForm" data-id-form="header">
+                                        <input type="text" name="name" placeholder="Ваше имя..." required>
+                                        <input type="number" name="phone" placeholder="Ваш номер телефона..." pattern="[+]{0,1}[0-9\s\-]+" required>
+                                        <label class="input-checkbox-block" for="headCheckbox">
+                                          <input id="headCheckbox" type="checkbox" required>
+                                          Разрешение на <a href="#"><u>обработку данных</u></a>
+                                        </label>
+                                    </form>
 
                                
 
@@ -905,21 +897,16 @@
                         <div class="form " data-id-form="footer">
                             <div class="form__container">
 
-                                <form class="" id="footerForm" data-id-form="footer">
-                                    <input  class="" type="text" placeholder="Ваше имя..."
-                                    data-id-form="footer">
-                                    <input class="" type="number" placeholder="Ваш номер телефона..."
-                                    data-id-form="footer">
-                                    
-                                    <label class="input-checkbox-block "
-                                    data-id-form="footer">
-                                        <input id="headCheckbox" type="checkbox">
-                                        <p for="headCheckbox">Разрешение на <a href="#" ><u>обработку данных</u></a></p>
-                                    </label> 
-                            </form>
+                                <form action="https://formspree.io/f/mpwpnakb" method="POST" id="footerForm" data-id-form="footer">
+                                    <input type="text" name="name" placeholder="Ваше имя..." required>
+                                    <input type="number" name="phone" placeholder="Ваш номер телефона..." pattern="[+]{0,1}[0-9\s\-]+" required>
+                                    <label class="input-checkbox-block" for="footerCheckbox">
+                                      <input id="footerCheckbox" type="checkbox" required>
+                                      Разрешение на <a href="#"><u>обработку данных</u></a>
+                                    </label>
+                                </form>
 
-                        
-
+                                
                             <button class="order-call-button" type="button" title="Открыть форму"
                             data-js-form-open 
                             data-id-form="footer">Заказать звонок</button>
@@ -1024,6 +1011,7 @@
     <script src="scripts/cursor.js"  type="module"></script>
     <script src="scripts/visibleElements.js"  type="module"></script>
     <script src="scripts/formOpen.js"  type="module"></script>
+    <script src="scripts/formSubmit.js"  type="module"></script>
     <script src="scripts/burgerMenu.js"  type="module"></script>
     <script src="scripts/choosingPlan.js"  type="module"></script>
     <script src="scripts/servicesSearch.js"  type="module"></script>
