@@ -1,37 +1,33 @@
-document.getElementById('headForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Проверка чекбокса
-    const checkbox = document.getElementById('headCheckbox');
-    if (!checkbox.checked) {
-        alert('Пожалуйста, дайте согласие на обработку данных');
-        return;
-    }
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const forms = document.querySelectorAll("form");
 
-    // Сбор данных формы
-    const formData = new FormData(e.target);
-    const data = {
-        name: formData.get('name'),
-        phone: formData.get('phone')
-    };
+  forms.forEach(form => {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
 
-    try {
-        const response = await fetch(e.target.action, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
+      const formData = new FormData(form);
+      const action = form.getAttribute("action");
+
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
         });
 
         if (response.ok) {
-            alert('Сообщение отправлено!');
-            e.target.reset(); // Очистка формы
+          alert("Спасибо! Ваша заявка отправлена.");
+          form.reset();
         } else {
-            throw new Error('Ошибка отправки');
+          alert("Ошибка при отправке. Пожалуйста, попробуйте позже.");
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Произошла ошибка при отправке');
-    }
+      } catch (error) {
+        alert("Ошибка сети. Проверьте подключение.");
+      }
+    });
+  });
 });
+</script>
