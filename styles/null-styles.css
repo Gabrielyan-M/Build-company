@@ -1,54 +1,60 @@
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  cursor: none;
-  scroll-behavior: smooth;
+@import url('./root-styles.css');
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
-  width: 0;
+    width: 0;
 }
 
 html {
-  background-color: #202020;
+    background-color: #000000;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  background-color: #202020;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+    background-color: white;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, li {
-  font-family: "Montserrat";
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: black;
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, a, span {
+    font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1.66px;
+    list-style: none;
+    text-decoration-line: none; 
 }
+
+h1 {
+    font-weight: var(--semiBold-font);
+}
+
+h2 {
+    font-size: clamp(2.5rem, 1.6923rem + 3.5897vw, 6rem);
+    font-weight: var(--bold-font);
+    text-align: center;
+}
+
+p,
+span {
+    font-weight: var(--regular-font);
+}
+
 
 button {
-  border: unset;
-  border-radius: unset;
-  background-color: unset;
-  padding: 0px;
-  cursor: none;
-}
-
-a {
-  color: black;
-  text-decoration-line: none;
-  cursor: none;
+    border: unset;
+    border-radius: unset;
+    background-color: unset;
+    padding: 0px;
+    font-weight: var(--regular-font)
 }
 
 img {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
+

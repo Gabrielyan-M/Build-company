@@ -1,0 +1,49 @@
+@import url('./null-styles.css');
+@import url('./root-styles.css');
+
+
+/* header */
+@import url('./blocks/head/header-styles.css');
+
+/* head */
+@import url('./blocks/head/head-styles.css');
+
+/* about us */
+@import url('./blocks/main/aboutUs/aboutUs-styles.css');
+
+/* servises */
+@import url('./blocks/main/servises/services-styles.css');
+
+/* reviews */
+@import url('./blocks/main/reviews/reviews-styles.css');
+
+/* contacts-and-form */
+@import url('./blocks/main/contacts/contacts-styles.css');
+
+
+
+
+
+
+/* all */
+@import url('./blocks/burger-button-styles.css');
+
+
+
+
+
+body.active {
+      height: 100vh;
+      overflow: hidden;
+}
+
+.web-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+}
+
+
+

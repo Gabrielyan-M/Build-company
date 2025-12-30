@@ -1,24 +1,41 @@
-const burgerButton = document.querySelector('.burger-button')
-const burgerMenu = document.querySelector('.burger-menu')
+const burgerButton = document.querySelectorAll('[data-js-burger-button]')
+const navigationMenu = document.querySelectorAll('[data-js-navigation-menu]')
+const body = document.querySelector('[data-js-body]')
 
-const anchorLinks = document.querySelectorAll('[data-js-anchor-link]')
 
-burgerButton.addEventListener('click', () => {
-    
-    burgerButton.classList.toggle('active-menu')
-    burgerMenu.classList.toggle('active-menu')
+function navMenu (data) {
+      navigationMenu.forEach(menu => {
+            if (menu.getAttribute('data-js-navigation-menu') === data) {
+                  menu.classList.toggle('active')
+                  
+            }
+      })
+}
 
-    document.querySelector('body').classList.toggle('scroll-off')
+burgerButton.forEach((button) => {
+      button.addEventListener('click', () => {
+            if ( button.getAttribute('data-js-burger-button') ) {
+                  navMenu (button.getAttribute('data-js-burger-button'))
+                  button.classList.toggle('active')
+            } 
 
+            body.classList.toggle('active')
+      })
 })
 
-anchorLinks.forEach(anchorLink => {
-    anchorLink.addEventListener('click', () => {
-        
-        burgerButton.classList.remove('active-menu')
-        burgerMenu.classList.remove('active-menu')
-        
-        document.querySelector('body').classList.remove('scroll-off')
 
-    })
+window.addEventListener('resize', (e) => {
+      if (e.target.innerWidth > 1000 ) {
+            burgerButton.forEach(elem => {
+                  elem.classList.remove('active')
+            })
+
+            navigationMenu.forEach(elem => {
+                  elem.classList.remove('active')
+            })
+
+            body.classList.remove('active')
+      }
 })
+
+
